@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_pf.c                                    :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brogalsk <brogalsk@student.42warsaw.p      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/16 16:01:36 by brogalsk          #+#    #+#             */
-/*   Updated: 2024/03/17 11:46:35 by brogalsk         ###   ########.fr       */
+/*   Created: 2024/02/29 09:58:58 by brogalsk          #+#    #+#             */
+/*   Updated: 2024/03/02 13:10:40 by brogalsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-void	ft_putchar_pf(char s, size_t *counter)
+int	ft_tolower(int c)
 {
-	write(1, &s, 1);
-	(*counter)++;
+	if (c >= 65 && c <= 90)
+		c += 32;
+	return (c);
 }
+/*int main()
+{
+	char a[] = "C";
+	printf ("%d", ft_tolower(*a));
+	return (0);
+}*/

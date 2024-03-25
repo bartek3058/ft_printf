@@ -1,19 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_pf.c                                    :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brogalsk <brogalsk@student.42warsaw.p      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/16 16:01:36 by brogalsk          #+#    #+#             */
-/*   Updated: 2024/03/17 11:46:35 by brogalsk         ###   ########.fr       */
+/*   Created: 2024/03/01 10:16:38 by brogalsk          #+#    #+#             */
+/*   Updated: 2024/03/15 13:11:19 by brogalsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-void	ft_putchar_pf(char s, size_t *counter)
+char	*ft_strdup(const char *s)
 {
-	write(1, &s, 1);
-	(*counter)++;
+	size_t	len;
+	char	*dst;
+	int		i;
+
+	i = 0;
+	len = ft_strlen(s);
+	dst = (char *)malloc(len + 1);
+	if (!dst)
+		return (NULL);
+	while (s[i] != '\0')
+	{
+		dst[i] = s[i];
+		i++;
+	}
+	dst[i] = 0;
+	return (dst);
 }

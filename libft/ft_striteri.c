@@ -1,19 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_pf.c                                    :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brogalsk <brogalsk@student.42warsaw.p      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/16 16:01:36 by brogalsk          #+#    #+#             */
-/*   Updated: 2024/03/17 11:46:35 by brogalsk         ###   ########.fr       */
+/*   Created: 2024/03/09 13:55:39 by brogalsk          #+#    #+#             */
+/*   Updated: 2024/03/09 14:22:05 by brogalsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-void	ft_putchar_pf(char s, size_t *counter)
+/*void	my_funcion(unsigned int i, char *s)
 {
-	write(1, &s, 1);
-	(*counter)++;
+	*s -= i - 1;
 }
+*/
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+{
+	unsigned int	i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		f(i, &s[i]);
+		i++;
+	}
+}
+
+/*int main()
+{
+	char s[] = "";
+	ft_striteri(s, my_funcion);
+	return (0);
+}*/

@@ -1,25 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_pf.c                                     :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brogalsk <brogalsk@student.42warsaw.p      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/17 11:50:15 by brogalsk          #+#    #+#             */
-/*   Updated: 2024/03/17 17:16:24 by brogalsk         ###   ########.fr       */
+/*   Created: 2024/02/29 10:05:35 by brogalsk          #+#    #+#             */
+/*   Updated: 2024/03/15 12:52:24 by brogalsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-void	ft_putstr_pf(char *s, size_t *counter)
+char	*ft_strchr(const char *s, int c)
 {
-	if (!s)
-		s = "(null)";
-	while(*s)
+	int		i;
+	char	*a;
+	char	cc;
+
+	cc = (char)c;
+	a = (char *)s;
+	i = 0;
+	while (a[i] != '\0')
 	{
-		write(1, s, 1);
-		*counter += 1;
-		s++;
+		if (a[i] == cc)
+			return (&a[i]);
+		i++;
 	}
+	if (a[i] == cc)
+		return (&a[i]);
+	return (NULL);
 }
+/*int main()
+{
+	const char a[] = "tripouille";
+	//char b[] = "c";
+	printf("%s\n", ft_strchr(a, 't' + 256));
+	printf("%s\n", strchr(a, 't' + 256));
+       return (0);
+}*/

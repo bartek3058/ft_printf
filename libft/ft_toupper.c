@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_pf.c                                    :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brogalsk <brogalsk@student.42warsaw.p      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/16 16:01:36 by brogalsk          #+#    #+#             */
-/*   Updated: 2024/03/17 11:46:35 by brogalsk         ###   ########.fr       */
+/*   Created: 2024/02/29 09:37:03 by brogalsk          #+#    #+#             */
+/*   Updated: 2024/03/02 13:30:28 by brogalsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-void	ft_putchar_pf(char s, size_t *counter)
+int	ft_toupper(int c)
 {
-	write(1, &s, 1);
-	(*counter)++;
+	if (c >= 97 && c <= 122)
+		c -= 32;
+	return (c);
 }
+/*int main ()
+{
+	char a[] = "Fa";
+	printf ("%d", ft_toupper(*a));
+	return (0);
+}*/

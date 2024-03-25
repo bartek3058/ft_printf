@@ -20,16 +20,16 @@ static void	ft_format(va_list args, char *str, size_t *counter)
 	       ft_putstr_pf(va_arg(args, char *), counter);
 	else if (*str == 'p')
 		ft_putvoid_pf(va_arg(args, void *), counter);
-	else if (*str == 'd' || *str == i)
+	else if (*str == 'd' || *str == 'i')
 		ft_putdecimal_pf(va_arg(args, int), counter);
 	else if (*str == 'u')
-		ft_putunint_pf(va_arg(args, unsigned int, counter);
+		ft_putunint_pf(va_arg(args, unsigned int), counter);
 	else if (*str == 'x')
 		ft_hexalower_pf(va_arg(args, unsigned int), counter);
 	else if (*str == 'X')
 		ft_hexaupper_pf(va_arg(args, unsigned int), counter);
 	else if (*str == '%')
-		ft_putchar_pf(va_arg(args, int), counter);
+		ft_putchar_pf(*str, counter);
 }	
 
 int	ft_printf(char const *str, ...)

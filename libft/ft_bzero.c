@@ -1,19 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_pf.c                                    :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brogalsk <brogalsk@student.42warsaw.p      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/16 16:01:36 by brogalsk          #+#    #+#             */
-/*   Updated: 2024/03/17 11:46:35 by brogalsk         ###   ########.fr       */
+/*   Created: 2024/02/27 18:22:12 by brogalsk          #+#    #+#             */
+/*   Updated: 2024/03/14 08:45:24 by brogalsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-void	ft_putchar_pf(char s, size_t *counter)
+void	ft_bzero(void *s, size_t n)
 {
-	write(1, &s, 1);
-	(*counter)++;
+	char	*p;
+
+	p = (char *)s;
+	while (n > 0)
+	{
+		*p = '\0';
+		n--;
+		p++;
+	}
 }
+/*int main ()
+{
+	char a[] = "abc";
+	printf ("%s", ft_bzero(a, 2));
+	return (0);
+}*/

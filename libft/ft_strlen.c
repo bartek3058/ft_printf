@@ -1,19 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_pf.c                                    :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brogalsk <brogalsk@student.42warsaw.p      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/16 16:01:36 by brogalsk          #+#    #+#             */
-/*   Updated: 2024/03/17 11:46:35 by brogalsk         ###   ########.fr       */
+/*   Created: 2024/02/27 13:02:30 by brogalsk          #+#    #+#             */
+/*   Updated: 2024/03/15 12:53:19 by brogalsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-void	ft_putchar_pf(char s, size_t *counter)
+size_t	ft_strlen(const char *s)
 {
-	write(1, &s, 1);
-	(*counter)++;
+	int		a;
+	size_t	b;
+
+	a = 0;
+	b = 0;
+	while (s[a] != '\0')
+	{
+		a++;
+		b++;
+	}
+	return (b);
 }
+/*int main ()
+{
+	char a[] = "a5333\nbc";
+	int b;
+
+	b = 0;
+	b = ft_strlen(a);
+	printf("%d", b);
+	return (0);
+}*/

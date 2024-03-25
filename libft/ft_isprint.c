@@ -1,19 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_pf.c                                    :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brogalsk <brogalsk@student.42warsaw.p      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/16 16:01:36 by brogalsk          #+#    #+#             */
-/*   Updated: 2024/03/17 11:46:35 by brogalsk         ###   ########.fr       */
+/*   Created: 2024/02/27 12:40:19 by brogalsk          #+#    #+#             */
+/*   Updated: 2024/03/13 20:01:57 by brogalsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-void	ft_putchar_pf(char s, size_t *counter)
+int	ft_isprint(int s)
 {
-	write(1, &s, 1);
-	(*counter)++;
+	if (!(s >= 32 && s <= 126))
+		return (0);
+	return (1);
 }
+
+/*int main ()
+{
+	char a[] = "ab\nc";
+	int	b;
+
+	b = ft_isprint(a);
+	printf("%d", b);
+	return (0);
+}*/

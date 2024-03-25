@@ -5,30 +5,24 @@
 #                                                     +:+ +:+         +:+      #
 #    By: brogalsk <brogalsk@student.42warsaw.p      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/03/16 13:22:45 by brogalsk          #+#    #+#              #
-#    Updated: 2024/03/17 11:44:49 by brogalsk         ###   ########.fr        #
+#    Created: 2024/03/02 11:49:05 by brogalsk          #+#    #+#              #
+#    Updated: 2024/03/15 11:03:42 by brogalsk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = cc
+CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-NAME = libftprintf.a
-SRC = ft_printf.c ft_hexalower_pf.c ft_putchar_pf.c ft_putstr_pf.c ft_putvoid_pf.c ft_hexaupper_pf.c ft_putdecimal_pf.c ft_putunint_pf.c
-OBJ = $(SRC:.c=.o)
-
+NAME = libft.a
+SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_itoa.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c ft_strchr.c ft_strdup.c ft_striteri.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c ft_split.c
+OBJS = $(SRCS:.c=.o)
 all: $(NAME)
-
-$(NAME): $(OBJ)
-	$(MAKE) -C ./libft
-	cp libft/libft.a $(NAME)
-	ar rcs $(NAME) $(OBJ)
-clean:
-	$(MAKE) clean -C ./libft
-	rm -rf $(OBJ)
+$(NAME): $(OBJS)
+	ar rcs $(NAME) $(OBJS)
+clean: 
+	rm -f $(OBJS)
 fclean: clean
-	$(MAKE) fclean -C ./libft
-	rm -rf $(NAME)
-re: fclean all
+	rm -f $(NAME)
+re: fclean $(NAME)
 
 .PHONY: all clean fclean re
 
