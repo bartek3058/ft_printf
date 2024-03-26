@@ -6,7 +6,7 @@
 /*   By: brogalsk <brogalsk@student.42warsaw.p      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 16:01:36 by brogalsk          #+#    #+#             */
-/*   Updated: 2024/03/17 11:46:35 by brogalsk         ###   ########.fr       */
+/*   Updated: 2024/03/25 14:38:16 by brogalsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_putchar_pf(char s, size_t *counter)
 {
-	write(1, &s, 1);
+	ft_putchar_fd(s, 1);
 	(*counter)++;
 }

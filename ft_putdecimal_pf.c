@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putdecimal_pf.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: brogalsk <brogalsk@student.42warsaw.p      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/25 10:25:46 by brogalsk          #+#    #+#             */
+/*   Updated: 2024/03/25 10:48:50 by brogalsk         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 /*static size_t	i_digits(int a)
@@ -26,17 +38,18 @@ static void	put_int(int a, size_t *counter)
 
 	if (a > 9)
 		put_int(a / 10, counter);
-	ft_putchar_pf(digits[a % 10], counter);
+	if (a >= 0)
+		ft_putchar_pf(digits[a % 10], counter);
 }
 
 void	ft_putdecimal_pf(int a, size_t *counter)
 {
 	if (a == INT_MIN)
 	{
-	ft_putdecimal_pf((a / 10), counter);
-	ft_putchar_pf('8', counter);
+		write(1, "-2147483648", 11);
+		*counter += 11;
 	}
-	if (a < 0)
+	else if (a < 0)
 	{
 		write(1, "-", 1);
 		a *= -1;

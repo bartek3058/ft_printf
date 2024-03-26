@@ -1,17 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putunint_pf.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: brogalsk <brogalsk@student.42warsaw.p      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/25 10:25:32 by brogalsk          #+#    #+#             */
+/*   Updated: 2024/03/25 14:15:25 by brogalsk         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
-
-/*static int	idigits(unsigned int b)
-{
-	int	len;
-
-	len = 0;
-	while (b > 9)
-	{
-		b /= 10;
-		len++;
-	}
-	return (len);
-}*/
 
 static void	put_unint(unsigned int b, size_t *counter)
 {
@@ -26,4 +25,3 @@ void	ft_putunint_pf(unsigned int b, size_t *counter)
 {
 	put_unint(b, counter);
 }
-

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print.h                                         :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brogalsk <brogalsk@student.42warsaw.p      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 14:27:35 by brogalsk          #+#    #+#             */
-/*   Updated: 2024/03/16 14:35:26 by brogalsk         ###   ########.fr       */
+/*   Updated: 2024/03/25 14:27:07 by brogalsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <limits.h>
 
 void	ft_hexalower_pf(unsigned int b, size_t *counter);
-int	ft_printf(char const *str, ...);
+int		ft_printf(char const *str, ...);
 void	ft_putchar_pf(char s, size_t *counter);
 void	ft_putstr_pf(char *s, size_t *counter);
 void	ft_putvoid_pf(void *s, size_t *counter);
